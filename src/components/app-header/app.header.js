@@ -1,11 +1,28 @@
 import React from 'react';
 import './app-header.css'
-const AppHeader = () => {
+import styled from 'styled-components';
+
+const Header = styled.div`
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    h1 {
+    font-size: 26px;
+    :hover{
+        color: #FFD700;
+     }
+    }
+    h2 {
+    font-size: 1.2rem;
+    color: grey;
+    }
+    `
+const AppHeader = ({allPosts, liked}) => {
     return (
-        <div className="app-header d-flex">
+        <Header>
             <h1>Ivan </h1>
-            <h2>5post </h2>
-        </div>
+            <h2>{allPosts} liked {liked} </h2>
+        </Header>
     )
 }
 export default AppHeader;
